@@ -1,6 +1,5 @@
-[gd_scene load_steps=13 format=3 uid="uid://b1tbsas5dr2gu"]
+[gd_scene load_steps=12 format=3 uid="uid://b1tbsas5dr2gu"]
 
-[ext_resource type="Script" path="res://Scripts/DoorController.gd" id="1_hwmfo"]
 [ext_resource type="PackedScene" uid="uid://cho6s7lw4skto" path="res://Scenes/player.tscn" id="1_ybm71"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5eoxl"]
@@ -49,9 +48,6 @@ material = SubResource("StandardMaterial3D_42jov")
 [node name="World" type="Node3D"]
 transform = Transform3D(1.00301, 0, 0, 0, 1.00301, 0, 0, 0, 1.00301, 0, 0, 0)
 
-[node name="DoorController" type="Node" parent="."]
-script = ExtResource("1_hwmfo")
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
@@ -73,6 +69,7 @@ mesh = SubResource("BoxMesh_8k810")
 
 [node name="Block" type="StaticBody3D" parent="."]
 script = SubResource("GDScript_4qpnr")
+PROMPT_MESSAGE = "Delete"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Block"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.710425, 0.661646, -3.3667)
@@ -82,5 +79,3 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Block"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.710425, 0.661646, -3.3667)
 shape = SubResource("BoxShape3D_ww36m")
-
-[connection signal="interacted" from="Block" to="DoorController" method="_on_block_interacted"]

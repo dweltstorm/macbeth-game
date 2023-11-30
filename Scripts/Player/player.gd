@@ -43,7 +43,6 @@ func _physics_process(delta):
 	
 	CURRENT_SPEED = lerp(CURRENT_SPEED, SPRINT_SPEED if Input.is_action_pressed("sprint") else SPEED, 0.1)
 	camera.fov = lerp(camera.fov, 95.0 if Input.is_action_pressed("sprint") else 80.0, 0.2)
-	print(camera.fov)
 	
 	if direction:
 		velocity.x = direction.x * CURRENT_SPEED

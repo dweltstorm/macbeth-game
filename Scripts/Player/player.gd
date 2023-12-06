@@ -5,6 +5,7 @@ extends CharacterBody3D
 @export var SPRINT_SPEED: float = 7.0
 @export var JUMP_VELOCITY: float = 4.5
 @export var SENSITIVITY: float = 0.003
+var QUEST
 var CURRENT_SPEED = SPEED
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.

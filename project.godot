@@ -12,11 +12,8 @@ config_version=5
 
 config/name="macbeth game"
 run/main_scene="res://Scenes/title_screen.tscn"
-<<<<<<< Updated upstream
 config/features=PackedStringArray("4.2", "Mobile")
-=======
 config/features=PackedStringArray("4.2", "Forward Plus")
->>>>>>> Stashed changes
 config/icon="res://icon.svg"
 
 [input]

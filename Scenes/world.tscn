@@ -1,6 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://b1tbsas5dr2gu"]
+[gd_scene load_steps=16 format=3 uid="uid://b1tbsas5dr2gu"]
 
 [ext_resource type="PackedScene" uid="uid://cho6s7lw4skto" path="res://Scenes/player.tscn" id="1_ybm71"]
+[ext_resource type="Script" path="res://Scripts/InteractableController.gd" id="2_atu0j"]
+[ext_resource type="Resource" uid="uid://bccbgj75b7l5l" path="res://Quests/quest1.tres" id="2_rw8re"]
+[ext_resource type="Resource" uid="uid://da0gw1xfjbn2s" path="res://Quests/quest2.tres" id="3_fkbhs"]
+[ext_resource type="Script" path="res://Scripts/DialogueSignals.gd" id="4_v3nii"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5eoxl"]
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -28,7 +32,7 @@ script/source = "extends Interactable
 "
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42jov"]
-albedo_color = Color(1, 0, 0, 1)
+albedo_color = Color(0.988235, 0, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_gn0vf"]
 material = SubResource("StandardMaterial3D_42jov")
@@ -47,6 +51,7 @@ environment = SubResource("Environment_dfgbg")
 
 [node name="Player" parent="." instance=ExtResource("1_ybm71")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2.28196, 1.1296, 0)
+QUESTS = Array[Resource("res://Quest.gd")]([ExtResource("2_rw8re"), ExtResource("3_fkbhs")])
 
 [node name="Floor" type="StaticBody3D" parent="."]
 
@@ -59,7 +64,7 @@ mesh = SubResource("BoxMesh_8k810")
 
 [node name="Block" type="StaticBody3D" parent="."]
 script = SubResource("GDScript_4qpnr")
-PROMPT_MESSAGE = "Delete"
+PROMPT_MESSAGE = "Talk"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Block"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.710425, 0.661646, -3.3667)
@@ -69,3 +74,11 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Block"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.710425, 0.661646, -3.3667)
 shape = SubResource("BoxShape3D_ww36m")
+
+[node name="DialogueSignals" type="Node" parent="."]
+script = ExtResource("4_v3nii")
+
+[node name="InteractableController" type="Node" parent="."]
+script = ExtResource("2_atu0j")
+
+[connection signal="interacted" from="Block" to="InteractableController" method="_on_block_interacted"]

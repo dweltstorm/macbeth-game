@@ -5,7 +5,8 @@ extends CharacterBody3D
 @export var SPRINT_SPEED: float = 7.0
 @export var JUMP_VELOCITY: float = 4.5
 @export var SENSITIVITY: float = 0.003
-var QUEST
+@export var QUESTS: Array[Quest] = []
+var quest_index = 0
 var CURRENT_SPEED = SPEED
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -14,6 +15,10 @@ var gravity = 9.8
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 @onready var raycast = $Head/InteractRay
+@onready var questtext = $HUD/QuestText
+
+func get_quest():
+	return QUESTS[quest_index]
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -24,6 +29,9 @@ func _unhandled_input(event):
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(60))
 		raycast.rotation.x = camera.rotation.x
+
+func _process(_delta):
+	questtext.text = "[center]CURRENT OBJECTIVE:\n%s" % get_quest().TITLE
 
 func _physics_process(delta):
 	# Add the gravity.

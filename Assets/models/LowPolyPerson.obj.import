@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ceey7c3jjci57"
+path="res://.godot/imported/LowPolyPerson.obj-108989e9a841cd5fa7d561b9da58f141.mesh"
+
+[deps]
+
+files=["res://.godot/imported/LowPolyPerson.obj-108989e9a841cd5fa7d561b9da58f141.mesh"]
+
+source_file="res://Assets/models/LowPolyPerson.obj"
+dest_files=["res://.godot/imported/LowPolyPerson.obj-108989e9a841cd5fa7d561b9da58f141.mesh", "res://.godot/imported/LowPolyPerson.obj-108989e9a841cd5fa7d561b9da58f141.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

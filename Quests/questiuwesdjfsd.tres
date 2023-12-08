@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="Quest" load_steps=2 format=3 uid="uid://doltots6n4j8i"]
-
-[ext_resource type="Script" path="res://Quest.gd" id="1_d68i1"]
-
-[resource]
-script = ExtResource("1_d68i1")
-TITLE = ""
-MAIN_TEXT = ""

@@ -1,11 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://b1tbsas5dr2gu"]
+[gd_scene load_steps=17 format=3 uid="uid://cxy55awygpfcj"]
 
 [ext_resource type="PackedScene" uid="uid://cho6s7lw4skto" path="res://Scenes/player.tscn" id="1_ybm71"]
 [ext_resource type="Script" path="res://Scripts/InteractableController.gd" id="2_atu0j"]
-[ext_resource type="Resource" uid="uid://bccbgj75b7l5l" path="res://Quests/quest1.tres" id="2_rw8re"]
-[ext_resource type="Resource" uid="uid://da0gw1xfjbn2s" path="res://Quests/quest2.tres" id="3_fkbhs"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="2_lnvkq"]
+[ext_resource type="Script" path="res://Quest.gd" id="3_lmde7"]
 [ext_resource type="Script" path="res://Scripts/DialogueSignals.gd" id="4_v3nii"]
-[ext_resource type="PackedScene" uid="uid://cvgit85h6fb37" path="res://macbeth_scene.glb" id="6_ctw2h"]
+[ext_resource type="PackedScene" uid="uid://cgchr32bh4eue" path="res://Assets/macbeth_scene.glb" id="6_ctw2h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5eoxl"]
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -19,26 +19,264 @@ sky = SubResource("Sky_1puo0")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="Resource" id="Resource_24g78"]
+script = ExtResource("2_lnvkq")
+using_states = []
+titles = {
+"this_is_a_node_title": "3"
+}
+character_names = []
+first_title = "3"
+lines = {
+"1": {
+"id": "1",
+"next_id": "3",
+"text": "this_is_a_node_title",
+"type": "title"
+},
+"11": {
+"id": "11",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
+},
+"3": {
+"character": "Macduff",
+"character_replacements": Array[Dictionary]([]),
+"id": "3",
+"next_id": "4",
+"tags": PackedStringArray(),
+"text": "Hello, Malcom. How are you doing today?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Hello, Malcom. How are you doing today?",
+"type": "dialogue"
+},
+"4": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "4",
+"next_id": "5",
+"next_id_after": "11",
+"responses": PackedStringArray("4", "6", "8"),
+"tags": PackedStringArray(),
+"text": "Great",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Great",
+"type": "response"
+},
+"5": {
+"character": "Macduff",
+"character_replacements": Array[Dictionary]([]),
+"id": "5",
+"next_id": "11",
+"parent_id": "4",
+"tags": PackedStringArray(),
+"text": "That's great to hear!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "That's great to hear!",
+"type": "dialogue"
+},
+"6": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "6",
+"next_id": "7",
+"next_id_after": "11",
+"tags": PackedStringArray(),
+"text": "Horrible",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Horrible",
+"type": "response"
+},
+"7": {
+"character": "Macduff",
+"character_replacements": Array[Dictionary]([]),
+"id": "7",
+"next_id": "11",
+"parent_id": "6",
+"tags": PackedStringArray(),
+"text": "good i fucking hate you",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "good i fucking hate you",
+"type": "dialogue"
+},
+"8": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "8",
+"next_id": "9",
+"next_id_after": "11",
+"tags": PackedStringArray(),
+"text": "Fine",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Fine",
+"type": "response"
+},
+"9": {
+"character": "Macduff",
+"character_replacements": Array[Dictionary]([]),
+"id": "9",
+"next_id": "11",
+"parent_id": "8",
+"tags": PackedStringArray(),
+"text": "balls",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "balls",
+"type": "dialogue"
+}
+}
+metadata/dialogue_manager_version = "2.30.0"
+
+[sub_resource type="Resource" id="Resource_k7003"]
+script = ExtResource("3_lmde7")
+TITLE = "Talk to Macduff"
+MAIN_TEXT = "dsoifjaosdfj"
+COMPLETE_DIALOGUE = SubResource("Resource_24g78")
+
+[sub_resource type="Resource" id="Resource_64ysj"]
+script = ExtResource("2_lnvkq")
+using_states = []
+titles = {
+"this_is_a_node_title": "3"
+}
+character_names = []
+first_title = "3"
+lines = {
+"1": {
+"id": "1",
+"next_id": "3",
+"text": "this_is_a_node_title",
+"type": "title"
+},
+"10": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "10",
+"next_id": "end",
+"next_id_after": "11",
+"tags": PackedStringArray(),
+"text": "End the conversation",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "End the conversation",
+"type": "response"
+},
+"11": {
+"character": "Nathan",
+"character_replacements": Array[Dictionary]([]),
+"id": "11",
+"next_id": "13",
+"tags": PackedStringArray(),
+"text": "For more information see the online documentation.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "For more information see the online documentation.",
+"type": "dialogue"
+},
+"13": {
+"id": "13",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
+},
+"3": {
+"character": "Nathan",
+"character_replacements": Array[Dictionary]([]),
+"id": "3",
+"next_id": "4",
+"tags": PackedStringArray(),
+"text": "[[Hi|Hello|Howdy]], this is some dialogue.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "[[Hi|Hello|Howdy]], this is some dialogue.",
+"type": "dialogue"
+},
+"4": {
+"character": "Nathan",
+"character_replacements": Array[Dictionary]([]),
+"id": "4",
+"next_id": "5",
+"tags": PackedStringArray(),
+"text": "Here are some choices.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Here are some choices.",
+"type": "dialogue"
+},
+"5": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "5",
+"next_id": "6",
+"next_id_after": "11",
+"responses": PackedStringArray("5", "7", "9", "10"),
+"tags": PackedStringArray(),
+"text": "First one",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "First one",
+"type": "response"
+},
+"6": {
+"character": "Nathan",
+"character_replacements": Array[Dictionary]([]),
+"id": "6",
+"next_id": "11",
+"parent_id": "5",
+"tags": PackedStringArray(),
+"text": "You picked the first one.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "You picked the first one.",
+"type": "dialogue"
+},
+"7": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "7",
+"next_id": "8",
+"next_id_after": "11",
+"tags": PackedStringArray(),
+"text": "Second one",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Second one",
+"type": "response"
+},
+"8": {
+"character": "Nathan",
+"character_replacements": Array[Dictionary]([]),
+"id": "8",
+"next_id": "11",
+"parent_id": "7",
+"tags": PackedStringArray(),
+"text": "You picked the second one.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "You picked the second one.",
+"type": "dialogue"
+},
+"9": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "9",
+"next_id": "3",
+"next_id_after": "11",
+"tags": PackedStringArray(),
+"text": "Start again",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Start again",
+"type": "response"
+}
+}
+metadata/dialogue_manager_version = "2.30.0"
+
+[sub_resource type="Resource" id="Resource_xmgme"]
+script = ExtResource("3_lmde7")
+TITLE = "Talk to oiiedas"
+MAIN_TEXT = ""
+COMPLETE_DIALOGUE = SubResource("Resource_64ysj")
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_xn35e"]
 size = Vector3(27.1398, 0.3, 16.1443)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c466r"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8hih3"]
 albedo_color = Color(0.2, 0.411765, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_8k810"]
-material = SubResource("StandardMaterial3D_c466r")
-
-[sub_resource type="GDScript" id="GDScript_4qpnr"]
-script/source = "extends Interactable
-"
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42jov"]
-albedo_color = Color(0.988235, 0, 0, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_gn0vf"]
-material = SubResource("StandardMaterial3D_42jov")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ww36m"]
+material = SubResource("StandardMaterial3D_8hih3")
 
 [node name="World" type="Node3D"]
 transform = Transform3D(1.00301, 0, 0, 0, 1.00301, 0, 0, 0, 1.00301, 0, 0, 0)
@@ -52,7 +290,7 @@ environment = SubResource("Environment_dfgbg")
 
 [node name="Player" parent="." instance=ExtResource("1_ybm71")]
 transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, -2.28196, 1.1296, 0)
-QUESTS = Array[Resource("res://Quest.gd")]([ExtResource("2_rw8re"), ExtResource("3_fkbhs")])
+QUESTS = Array[ExtResource("3_lmde7")]([SubResource("Resource_k7003"), SubResource("Resource_xmgme")])
 
 [node name="Floor" type="StaticBody3D" parent="."]
 
@@ -64,19 +302,6 @@ shape = SubResource("BoxShape3D_xn35e")
 transform = Transform3D(27.3119, 0, 0, 0, 0.3, 0, 0, 0, 16.1335, 0, -0.0604203, -1.62916)
 mesh = SubResource("BoxMesh_8k810")
 
-[node name="Block" type="StaticBody3D" parent="."]
-script = SubResource("GDScript_4qpnr")
-PROMPT_MESSAGE = "Talk"
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Block"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.710425, 0.661646, -3.3667)
-mesh = SubResource("BoxMesh_gn0vf")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Block"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.710425, 0.661646, -3.3667)
-shape = SubResource("BoxShape3D_ww36m")
-
 [node name="DialogueSignals" type="Node" parent="."]
 script = ExtResource("4_v3nii")
 
@@ -85,5 +310,3 @@ script = ExtResource("2_atu0j")
 
 [node name="macbeth_scene" parent="." instance=ExtResource("6_ctw2h")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
-
-[connection signal="interacted" from="Block" to="InteractableController" method="_on_block_interacted"]

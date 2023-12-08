@@ -1,13 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://b1tbsas5dr2gu"]
+[gd_scene load_steps=16 format=3 uid="uid://b1tbsas5dr2gu"]
 
 [ext_resource type="PackedScene" uid="uid://cho6s7lw4skto" path="res://Scenes/player.tscn" id="1_ybm71"]
 [ext_resource type="Script" path="res://Scripts/InteractableController.gd" id="2_atu0j"]
 [ext_resource type="Resource" uid="uid://bccbgj75b7l5l" path="res://Quests/quest1.tres" id="2_rw8re"]
 [ext_resource type="Resource" uid="uid://da0gw1xfjbn2s" path="res://Quests/quest2.tres" id="3_fkbhs"]
-[ext_resource type="Texture2D" uid="uid://c6k76uhjphr78" path="res://Assets/Character_models/MalcolmTexture.png" id="4_4j6dh"]
 [ext_resource type="Script" path="res://Scripts/DialogueSignals.gd" id="4_v3nii"]
-[ext_resource type="ArrayMesh" uid="uid://buqf08jmy1k2" path="res://Assets/Character_models/Character(resizeTo13).obj" id="5_p4ki3"]
-[ext_resource type="Texture2D" uid="uid://bm3imc6k6qass" path="res://Assets/Character_models/Malcolm2_macduffTexture.png" id="8_mfh2h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5eoxl"]
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -42,12 +39,6 @@ material = SubResource("StandardMaterial3D_42jov")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ww36m"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fbg16"]
-albedo_texture = ExtResource("4_4j6dh")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ei7np"]
-albedo_texture = ExtResource("8_mfh2h")
-
 [node name="World" type="Node3D"]
 transform = Transform3D(1.00301, 0, 0, 0, 1.00301, 0, 0, 0, 1.00301, 0, 0, 0)
 
@@ -77,7 +68,6 @@ PROMPT_MESSAGE = "Talk"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Block"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.710425, 0.661646, -3.3667)
-visible = false
 mesh = SubResource("BoxMesh_gn0vf")
 skeleton = NodePath("")
 
@@ -85,21 +75,10 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.710425, 0.661646, -3.3667)
 shape = SubResource("BoxShape3D_ww36m")
 
-[node name="Malcolm1" type="MeshInstance3D" parent="Block"]
-transform = Transform3D(11.2754, 0, -6.47031, 0, 13, 0, 6.47031, 0, 11.2754, 0.760539, 0.15, -3.27912)
-material_override = SubResource("StandardMaterial3D_fbg16")
-mesh = ExtResource("5_p4ki3")
-skeleton = NodePath("../..")
-
 [node name="DialogueSignals" type="Node" parent="."]
 script = ExtResource("4_v3nii")
 
 [node name="InteractableController" type="Node" parent="."]
 script = ExtResource("2_atu0j")
-
-[node name="MalcolmPose" type="MeshInstance3D" parent="."]
-transform = Transform3D(13, 0, 0, 0, 13, 0, 0, 0, 13, 2.15766, 0.15, -1.89046)
-material_override = SubResource("StandardMaterial3D_ei7np")
-mesh = ExtResource("5_p4ki3")
 
 [connection signal="interacted" from="Block" to="InteractableController" method="_on_block_interacted"]

@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://bccbgj75b7l5l" path="res://Quests/quest1.tres" id="2_rw8re"]
 [ext_resource type="Resource" uid="uid://da0gw1xfjbn2s" path="res://Quests/quest2.tres" id="3_fkbhs"]
 [ext_resource type="Script" path="res://Scripts/DialogueSignals.gd" id="4_v3nii"]
-[ext_resource type="PackedScene" uid="uid://cvgit85h6fb37" path="res://macbeth_scene.glb" id="6_ctw2h"]
+[ext_resource type="PackedScene" uid="uid://cgchr32bh4eue" path="res://Assets/macbeth_scene.glb" id="6_ug85u"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5eoxl"]
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -55,6 +55,7 @@ transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, -2.281
 QUESTS = Array[Resource("res://Quest.gd")]([ExtResource("2_rw8re"), ExtResource("3_fkbhs")])
 
 [node name="Floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.394964, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11528, 0, -1.60413)
@@ -83,7 +84,7 @@ script = ExtResource("4_v3nii")
 [node name="InteractableController" type="Node" parent="."]
 script = ExtResource("2_atu0j")
 
-[node name="macbeth_scene" parent="." instance=ExtResource("6_ctw2h")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+[node name="macbeth_scene" parent="." instance=ExtResource("6_ug85u")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -4.02612, 0.15, -0.417675)
 
 [connection signal="interacted" from="Block" to="InteractableController" method="_on_block_interacted"]

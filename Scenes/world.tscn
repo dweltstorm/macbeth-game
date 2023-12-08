@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://b1tbsas5dr2gu"]
+[gd_scene load_steps=17 format=3 uid="uid://b1tbsas5dr2gu"]
 
 [ext_resource type="PackedScene" uid="uid://cho6s7lw4skto" path="res://Scenes/player.tscn" id="1_ybm71"]
 [ext_resource type="Script" path="res://Scripts/InteractableController.gd" id="2_atu0j"]
 [ext_resource type="Resource" uid="uid://bccbgj75b7l5l" path="res://Quests/quest1.tres" id="2_rw8re"]
 [ext_resource type="Resource" uid="uid://da0gw1xfjbn2s" path="res://Quests/quest2.tres" id="3_fkbhs"]
 [ext_resource type="Script" path="res://Scripts/DialogueSignals.gd" id="4_v3nii"]
+[ext_resource type="PackedScene" uid="uid://cvgit85h6fb37" path="res://macbeth_scene.glb" id="6_ctw2h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5eoxl"]
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -19,7 +20,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xn35e"]
-size = Vector3(15, 0.3, 15)
+size = Vector3(27.1398, 0.3, 16.1443)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c466r"]
 albedo_color = Color(0.2, 0.411765, 0, 1)
@@ -50,16 +51,17 @@ shadow_enabled = true
 environment = SubResource("Environment_dfgbg")
 
 [node name="Player" parent="." instance=ExtResource("1_ybm71")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2.28196, 1.1296, 0)
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, -2.28196, 1.1296, 0)
 QUESTS = Array[Resource("res://Quest.gd")]([ExtResource("2_rw8re"), ExtResource("3_fkbhs")])
 
 [node name="Floor" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11528, 0, -1.60413)
 shape = SubResource("BoxShape3D_xn35e")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(15, 0, 0, 0, 0.3, 0, 0, 0, 15, 0, 0, 0)
+transform = Transform3D(27.3119, 0, 0, 0, 0.3, 0, 0, 0, 16.1335, 0, -0.0604203, -1.62916)
 mesh = SubResource("BoxMesh_8k810")
 
 [node name="Block" type="StaticBody3D" parent="."]
@@ -80,5 +82,8 @@ script = ExtResource("4_v3nii")
 
 [node name="InteractableController" type="Node" parent="."]
 script = ExtResource("2_atu0j")
+
+[node name="macbeth_scene" parent="." instance=ExtResource("6_ctw2h")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
 [connection signal="interacted" from="Block" to="InteractableController" method="_on_block_interacted"]

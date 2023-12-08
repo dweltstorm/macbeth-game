@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cxy55awygpfcj"]
+[gd_scene load_steps=18 format=3 uid="uid://b1tbsas5dr2gu"]
 
 [ext_resource type="PackedScene" uid="uid://cho6s7lw4skto" path="res://Scenes/player.tscn" id="1_ybm71"]
 [ext_resource type="Script" path="res://Scripts/InteractableController.gd" id="2_atu0j"]
@@ -278,6 +278,8 @@ albedo_color = Color(0.2, 0.411765, 0, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_8k810"]
 material = SubResource("StandardMaterial3D_8hih3")
 
+[sub_resource type="BoxMesh" id="BoxMesh_cut4k"]
+
 [node name="World" type="Node3D"]
 transform = Transform3D(1.00301, 0, 0, 0, 1.00301, 0, 0, 0, 1.00301, 0, 0, 0)
 
@@ -310,3 +312,8 @@ script = ExtResource("2_atu0j")
 
 [node name="macbeth_scene" parent="." instance=ExtResource("6_ctw2h")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="macbeth_scene"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 5.868, 0)
+mesh = SubResource("BoxMesh_cut4k")
+skeleton = NodePath("../..")

@@ -8,3 +8,7 @@ signal interacted(body, interactable)
 
 func interact(body):
 	emit_signal("interacted", body, self)
+
+
+func _on_interacted(body, interactable):
+	pass # Replace with function body.

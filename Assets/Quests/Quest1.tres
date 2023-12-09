@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=3 format=3 uid="uid://cpgu6ne30gt8v"]
+
+[ext_resource type="Resource" uid="uid://ciynr8owpvd8r" path="res://Assets/Dialog/dialog1.dialogue" id="1_6lw04"]
+[ext_resource type="Script" path="res://Quest.gd" id="1_tr6rq"]
+
+[resource]
+script = ExtResource("1_tr6rq")
+TITLE = "talk to Macduff"
+MAIN_TEXT = ""
+COMPLETE_DIALOGUE = ExtResource("1_6lw04")

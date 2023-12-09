@@ -61,3 +61,8 @@ func _physics_process(delta):
 		velocity.z = 0.0
 
 	move_and_slide()
+
+
+func _on_interactable_interacted(body, _interactable):	
+	body.get_quest().complete(body)
+	pass # Replace with function body.

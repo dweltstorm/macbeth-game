@@ -1126,6 +1126,7 @@ mesh = SubResource("ArrayMesh_5681x")
 skeleton = NodePath("")
 
 [node name="Macduff" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.926044, 0)
 
 [node name="Interactable" type="StaticBody3D" parent="Macduff"]
 script = ExtResource("10_ftjte")
@@ -1142,7 +1143,7 @@ mesh = ExtResource("10_nj5j6")
 skeleton = NodePath("../..")
 
 [node name="Ross" type="StaticBody3D" parent="."]
-transform = Transform3D(0.968839, 0, -0.247692, 0, 1, 0, 0.247692, 0, 0.968839, -25.2673, 0, 0)
+transform = Transform3D(0.968839, 0, -0.247692, 0, 1, 0, 0.247692, 0, 0.968839, -4.93563, -0.772734, 0)
 visible = false
 
 [node name="Interactable" type="StaticBody3D" parent="Ross"]
@@ -1161,7 +1162,7 @@ mesh = ExtResource("10_nj5j6")
 skeleton = NodePath("../..")
 
 [node name="Doctor" type="StaticBody3D" parent="."]
-transform = Transform3D(0.968839, 0, -0.247692, 0, 1, 0, 0.247692, 0, 0.968839, -9.45484, 0, 0)
+transform = Transform3D(-0.99497, 0, 0.10017, 0, 1, 0, -0.10017, 0, -0.99497, -109.741, 0, -5.23227)
 visible = false
 
 [node name="Interactable" type="StaticBody3D" parent="Doctor"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dep047p5wokn"]
 
-[ext_resource type="Texture2D" uid="uid://bq3kgonglvcbj" path="res://Assets/Characters/Ross_macduffTexture.png" id="1_3dtqk"]
+[ext_resource type="Texture2D" uid="uid://bq3kgonglvcbj" path="res://Assets/Characters/RossTexture.png" id="1_3dtqk"]
 [ext_resource type="ArrayMesh" uid="uid://cuntj4dr45jn8" path="res://Assets/Characters/workingIdlePose.obj" id="2_vmxy7"]
 [ext_resource type="Script" path="res://Scripts/Interactable.gd" id="3_o1a5o"]
 

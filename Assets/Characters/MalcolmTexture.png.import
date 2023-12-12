@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bq3kgonglvcbj"
-path.s3tc="res://.godot/imported/Ross_macduffTexture.png-11599a8920d58cf1e41f8652a5ebc583.s3tc.ctex"
+uid="uid://du8bjj01iwh4e"
+path.s3tc="res://.godot/imported/MalcolmTexture.png-89e14eb51cc7e0063e704b45dc9dd5c8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://Assets/Characters/Ross_macduffTexture.png"
-dest_files=["res://.godot/imported/Ross_macduffTexture.png-11599a8920d58cf1e41f8652a5ebc583.s3tc.ctex"]
+source_file="res://Assets/Characters/MalcolmTexture.png"
+dest_files=["res://.godot/imported/MalcolmTexture.png-89e14eb51cc7e0063e704b45dc9dd5c8.s3tc.ctex"]
 
 [params]
 

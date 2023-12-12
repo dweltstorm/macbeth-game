@@ -1,15 +1,20 @@
 ~ this_is_a_node_title
 
 You: Is King Edward coming out?
-Doctor: Yes, a crowd of sick people is waiting for him to heal them. For whatever reason whenever he touches a person they heal magically.
-- You: ???.
+Doctor: Yes, a crowd of sick people are waiting for him to heal them. For whatever reason whenever he touches a person they heal magically.
+- You: What???.
 	Doctor: Yes its due to his power granted to him from heaven.
 - You: Oh okay.
-	Doctor: You are an Npc
-	You: okay buddy
+	Doctor: You are an Npc.
+	You: Okay buddy.
 - You: I see.
-	Doctor: You are an Npc
-	You: okay buddy
-do get_node("/root/macbeth_scene/Doctor").visible = false
+	Doctor: You are an Npc.
+	You: Okay buddy.
+You: What kind of disease are you talking about though?
+Doctor: Its called the evil, Edward's healing touch is a miracle that I have seen him perform many times.
+Doctor: He is able to cure the worst of diseases, all kinds of strange conditions however he never fails to bless the unfortunate.
+Doctor: He does it by placing a gold coin around their necks and he says holy prayers to them.
+You: Oh thats cool. 
+#do get_node("/root/macbeth_scene/Doctor").visible = false
 do get_node("/root/macbeth_scene/Ross").visible = true
 => END

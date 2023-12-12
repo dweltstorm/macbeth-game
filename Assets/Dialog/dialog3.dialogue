@@ -1,17 +1,25 @@
 ~ this_is_a_node_title
 
 Macduff: Who's that?
-You: My noble countryman.
-Macduff: Welcome ross. Is scotland the same as I left it?
-Ross: Alas, our poor country! Its too frightened to look at itself.
+- My noble countryman, Ross.
+	Macduff: Welcome ross. Is scotland the same as I left it?
+	Ross: Alas, our poor country! Its too frightened to look at itself.
+- It is some random homeless guy.
+	Ross: Are you serious right now bro.
+	Ross: Anyways im countryman, Ross.
+	Macduff: Okay ross is scotland the same as I left it?
+- Im not sure, I don't know him.
+	Ross: You've got to be trolling.
+	Ross: Anyways im countryman, Ross.
+	Macduff: Okay ross is scotland the same as I left it?
 Macduff: What about my Wife and Children?
 Ross: They were well when I left them.
-Macduff: dont be stingy with your words. Whats the news?
+Macduff: Don't be stingy with your words. Whats the news?
 Ross:  I heard rumors that many good men are arming themselves to rebel against Macbeth. I wish I could repay this happy news with good news of my own. But I have some news that should be howled in a barren desert where nobody can hear it.
 Macduff: If its for me, dont keep it from me. Let me have it now.
 Ross: Your castle was attacked and your whole family ****ing died.
 You: Let this anger sharpen your sword. Transform your grief into anger. Don’t block the feelings in your heart; let them loose as rage.
 Macduff: Bring me face to face with Macbeth, that devil of Scotland. Put him within the reach of my sword, and if he escapes, may heaven forgive him as well!
 You: Now you sound like a man. Come on, let’s go see King Edward. The army is ready.
-do get_node("/root/macbeth_scene/Ross").visible = false
+#do get_node("/root/macbeth_scene/Ross").visible = false
 => END

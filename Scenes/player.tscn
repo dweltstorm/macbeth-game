@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cho6s7lw4skto"]
+[gd_scene load_steps=9 format=3 uid="uid://cho6s7lw4skto"]
 
 [ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_ouagk"]
 [ext_resource type="Script" path="res://Scripts/Player/interactRay.gd" id="2_twgbq"]
 [ext_resource type="Script" path="res://Scripts/HUD/reticle.gd" id="2_uh726"]
+[ext_resource type="FontFile" uid="uid://jto8p4jr4sjs" path="res://Assets/Fonts/MinecraftRegular-Bmg3.otf" id="3_b8dc2"]
 [ext_resource type="Shader" path="res://Assets/Shaders/pixelate.gdshader" id="3_rkv1y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xp27j"]
@@ -64,9 +65,11 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_top = -20.0
-offset_right = 223.0
-offset_bottom = 177.0
+offset_right = 411.0
+offset_bottom = 317.0
 grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_b8dc2")
+theme_override_font_sizes/normal_font_size = 35
 bbcode_enabled = true
 text = "[center]CURRENT OBJECTIVE[/center]"
 

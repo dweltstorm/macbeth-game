@@ -1,0 +1,17 @@
+~ this_is_a_node_title
+
+You: Is King Edward coming out?
+Doctor: Yes, a crowd of sick people is waiting for him to heal them. For whatever reason whenever he touches a person they heal magically.
+- You: ???.
+	Doctor: Yes its due to his power granted to him from heaven.
+	=> END
+- You: Oh okay.
+	Doctor: You are an Npc
+	You: okay buddy
+	=> END
+- You: I see.
+	Doctor: You are an Npc
+	You: okay buddy
+	=> END
+
+=> END

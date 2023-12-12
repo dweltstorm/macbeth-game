@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://dep047p5wokn"]
+
+[ext_resource type="Texture2D" uid="uid://bq3kgonglvcbj" path="res://Assets/Characters/Ross_macduffTexture.png" id="1_3dtqk"]
+[ext_resource type="ArrayMesh" uid="uid://cuntj4dr45jn8" path="res://Assets/Characters/workingIdlePose.obj" id="2_vmxy7"]
+[ext_resource type="Script" path="res://Scripts/Interactable.gd" id="3_o1a5o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6fs05"]
+albedo_texture = ExtResource("1_3dtqk")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a5kls"]
+size = Vector3(0.0613708, 0.134735, 0.0657959)
+
+[node name="Ross" type="Node3D"]
+
+[node name="WorkingIdlePose" type="MeshInstance3D" parent="."]
+transform = Transform3D(150, 0, 0, 0, 150, 0, 0, 0, 150, 0, -0.980213, 0)
+material_override = SubResource("StandardMaterial3D_6fs05")
+mesh = ExtResource("2_vmxy7")
+
+[node name="Interactable" type="StaticBody3D" parent="."]
+transform = Transform3D(150, 0, 0, 0, 150, 0, 0, 0, 150, 0, -0.980213, 0)
+script = ExtResource("3_o1a5o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00175476, 0.0738067, 0.00164795)
+shape = SubResource("BoxShape3D_a5kls")

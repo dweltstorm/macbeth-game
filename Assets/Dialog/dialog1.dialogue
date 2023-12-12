@@ -20,5 +20,4 @@ You: Ngl I should be king.
 Macduff: You shouldn't even be alive what makes you think you should be king.
 You: Nah you lowkey bipolar.
 You: I trust you now though, I understand you are trustworthy and honorable.
-do get_tree().quit()
 => END

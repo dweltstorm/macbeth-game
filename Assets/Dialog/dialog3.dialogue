@@ -13,8 +13,5 @@ Ross: Your castle was attacked and your whole family ****ing died.
 You: Let this anger sharpen your sword. Transform your grief into anger. Don’t block the feelings in your heart; let them loose as rage.
 Macduff: Bring me face to face with Macbeth, that devil of Scotland. Put him within the reach of my sword, and if he escapes, may heaven forgive him as well!
 You: Now you sound like a man. Come on, let’s go see King Edward. The army is ready.
-
-
-
-
+do get_node("/root/macbeth_scene/Ross").visible = false
 => END

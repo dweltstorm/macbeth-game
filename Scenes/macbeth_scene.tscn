@@ -1129,6 +1129,7 @@ skeleton = NodePath("")
 
 [node name="Interactable" type="StaticBody3D" parent="Macduff"]
 script = ExtResource("10_ftjte")
+PROMPT_ACTION = "Talk"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Macduff/Interactable"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.02342, 11.69, 32.3794)
@@ -1140,33 +1141,37 @@ material_override = SubResource("StandardMaterial3D_k5nv7")
 mesh = ExtResource("10_nj5j6")
 skeleton = NodePath("../..")
 
-[node name="Ross(del & use scene)" type="StaticBody3D" parent="."]
+[node name="Ross" type="StaticBody3D" parent="."]
 transform = Transform3D(0.968839, 0, -0.247692, 0, 1, 0, 0.247692, 0, 0.968839, -25.2673, 0, 0)
+visible = false
 
-[node name="Interactable" type="StaticBody3D" parent="Ross(del & use scene)"]
+[node name="Interactable" type="StaticBody3D" parent="Ross"]
 script = ExtResource("10_ftjte")
+PROMPT_MESSAGE = "Talk"
+PROMPT_ACTION = "Talk"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ross(del & use scene)/Interactable"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ross/Interactable"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.02342, 11.69, 32.3794)
 shape = SubResource("BoxShape3D_7rx5m")
 
-[node name="WorkingIdlePose" type="MeshInstance3D" parent="Ross(del & use scene)"]
+[node name="WorkingIdlePose" type="MeshInstance3D" parent="Ross"]
 transform = Transform3D(-149.971, 0, -2.93196, 0, 150, 0, 2.93196, 0, -149.971, 2.75008, 0.5, 32.5948)
 material_override = SubResource("StandardMaterial3D_e3j3l")
 mesh = ExtResource("10_nj5j6")
 skeleton = NodePath("../..")
 
-[node name="Doctor(del & use scene)2" type="StaticBody3D" parent="."]
+[node name="Doctor" type="StaticBody3D" parent="."]
 transform = Transform3D(0.968839, 0, -0.247692, 0, 1, 0, 0.247692, 0, 0.968839, -9.45484, 0, 0)
+visible = false
 
-[node name="Interactable" type="StaticBody3D" parent="Doctor(del & use scene)2"]
+[node name="Interactable" type="StaticBody3D" parent="Doctor"]
 script = ExtResource("10_ftjte")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Doctor(del & use scene)2/Interactable"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Doctor/Interactable"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.02342, 11.69, 32.3794)
 shape = SubResource("BoxShape3D_7rx5m")
 
-[node name="WorkingIdlePose" type="MeshInstance3D" parent="Doctor(del & use scene)2"]
+[node name="WorkingIdlePose" type="MeshInstance3D" parent="Doctor"]
 transform = Transform3D(-149.971, 0, -2.93196, 0, 150, 0, 2.93196, 0, -149.971, 2.75008, 0.5, 32.5948)
 material_override = SubResource("StandardMaterial3D_eos51")
 mesh = ExtResource("10_nj5j6")
@@ -1209,5 +1214,5 @@ shape = SubResource("BoxShape3D_gmtde")
 mesh = SubResource("BoxMesh_u3a32")
 
 [connection signal="interacted" from="Macduff/Interactable" to="Player" method="_on_interactable_interacted"]
-[connection signal="interacted" from="Ross(del & use scene)/Interactable" to="Player" method="_on_interactable_interacted"]
-[connection signal="interacted" from="Doctor(del & use scene)2/Interactable" to="Player" method="_on_interactable_interacted"]
+[connection signal="interacted" from="Ross/Interactable" to="Player" method="_on_interactable_interacted"]
+[connection signal="interacted" from="Doctor/Interactable" to="Player" method="_on_interactable_interacted"]

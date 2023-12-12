@@ -4,14 +4,12 @@ You: Is King Edward coming out?
 Doctor: Yes, a crowd of sick people is waiting for him to heal them. For whatever reason whenever he touches a person they heal magically.
 - You: ???.
 	Doctor: Yes its due to his power granted to him from heaven.
-	=> END
 - You: Oh okay.
 	Doctor: You are an Npc
 	You: okay buddy
-	=> END
 - You: I see.
 	Doctor: You are an Npc
 	You: okay buddy
-	=> END
-
+do get_node("/root/macbeth_scene/Doctor").visible = false
+do get_node("/root/macbeth_scene/Ross").visible = true
 => END
